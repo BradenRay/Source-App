@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route , BrowserRouter as Router } from 'react-router-dom'
-import './App.css';
-import HomePage from './Components/HomePage'
-import ContentPage from './Components/ContentPage'
-import Login from './Components/Login'
-import SignUp from './Components/SignUp'
-import Profile from './Components/Profile'
-import NewUser from './Components/NewUser'
+import './src/App.css';
+import HomePage from './src/Components/HomePage'
+import ContentPage from './src/Components/ContentPage'
+import Login from './src/Components/Login'
+import SignUp from './src/Components/SignUp'
+import Profile from './src/Components/Profile'
+import NewUser from './src/Components/NewUser'
 
 
 function App() {

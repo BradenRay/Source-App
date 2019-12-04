@@ -36,7 +36,7 @@ function HomePage(props) {
     const handleBody = (event) => {
         setNewBody(event.target.value);
     }
-    function writeNewPost() {
+    const writeNewPost = () => {
         var postData = {
           author: username,
           uid: uid,
@@ -48,7 +48,7 @@ function HomePage(props) {
         var newPostKey = firebase.database().ref().child('posts').push().key;
         var updates = {};
         updates['/posts/' + newPostKey] = postData;
-        updates['/users/' + uid + '/posts/' + '/' + newPostKey] = postData;
+        updates['/users/' + uid + '/posts/' + newPostKey] = postData;
         return  firebase.database().ref().update(updates);
     }
 

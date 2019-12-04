@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter, Redirect} from 'react-router-dom';
 import Navbar from './Navbar'
+import TriviaPanel from './TriviaPanel'
 
 function ContentPage(props) {
     try{
@@ -13,7 +14,7 @@ function ContentPage(props) {
         <div>
             <Navbar />
         <div className="App">
-            Welcome to the content page
+            <TriviaPanel />
         </div>
         </div>
     )

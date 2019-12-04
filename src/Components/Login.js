@@ -49,7 +49,7 @@ function Login() {
     <div className = "logside">
       <h1>Hello</h1>
       <h2>Welcome to our site</h2>
-      <p>Definitely still a work in progress</p>
+      <p>Let's just say it's a work in progress</p>
     </div>
     <div className = "login">
       <h1>Login</h1>

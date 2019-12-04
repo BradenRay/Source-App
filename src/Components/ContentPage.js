@@ -14,6 +14,7 @@ function ContentPage(props) {
         <div>
             <Navbar />
         <div className="App">
+            <h1>Axios Trivia</h1>
             <TriviaPanel />
         </div>
         </div>

@@ -2,14 +2,13 @@ import React, {useState,useEffect} from 'react';
 import {withRouter, Redirect} from 'react-router-dom';
 import Navbar from './Navbar';
 import firebase from "./Firebase.js";
-import {Card, Popper, Button} from '@material-ui/core';
+import {Card} from '@material-ui/core';
 
 function HomePage(props) {
     const [newtitle,setNewTitle] = useState('');
     const [newbody,setNewBody] = useState('');
     const [username,setUsername] = useState('');
     const [childData, setChildData] = useState([]);
-    const [anchorE1, setAnchorE1] = useState(null);
     
     useEffect(() => {
         firebase.database().ref('users/' + props.location.state.id).once('value').then(function(snapshot) {
@@ -51,14 +50,8 @@ function HomePage(props) {
         updates['/users/' + uid + '/posts/' + newPostKey] = postData;
         return  firebase.database().ref().update(updates);
     }
-
-    const open = Boolean(anchorE1);
-    const id = open ? 'simple-popper' : undefined;
-    const handleClick = event => {
-        setAnchorE1(anchorE1 ? null : event.currentTarget);
-    };
     
-    function removePost(key) {
+    const removePost = (key) => {
         console.log(key)
         //firebase.database().ref('posts/').child(key).remove()
     }
@@ -66,18 +59,13 @@ function HomePage(props) {
     return (
         <div>
             <Navbar />
-        <div className="App">
-            <Button aria-describedby={id} onClick={handleClick} variant="contained" color="secondary">
-                Make new post
-            </Button><p/>
-            <Popper id={id} open={open} anchorE1={anchorE1}>
-                <Card className="Popup">
+            <div className="App">
+                <Card>
                 <input type="text" onChange={handleTitle}/><p/>
                 <input type="text" onChange={handleBody}/><p/>
-                <button type="submit" onClick={writeNewPost}>Submit Changes</button>
-                <p>Note: Refresh page to see changes after submission</p>
+                <button type="submit" onClick={writeNewPost}>New post</button>
+                <p>Note: Refresh page to see changes after submission, working to fix this</p>
                 </Card>
-            </Popper>
             <div>
             {
             Object.keys(childData).map(function(key) {

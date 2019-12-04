@@ -18,7 +18,7 @@ export default function TriviaPanel() {
                 let index = Math.floor(Math.random()*res.data.length)
                 setQuestion(
                     <div>
-                    <h1>{res.data[index].question}</h1>
+                    <h2>{res.data[index].question}</h2>
                     </div>
                 )
                 setAnswer(
